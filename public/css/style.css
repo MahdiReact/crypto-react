@@ -1,0 +1,578 @@
+* {
+       margin: 0 auto;
+       padding: 0;
+       box-sizing: border-box;
+       color: #333;
+       
+}
+body{
+       font-family: 'Nunito', sans-serif;
+}
+/* start of define repeating styles */
+a {
+       text-decoration: none;
+       transition: all 0.2s;
+}
+a:hover {
+       color: #f9b500 !important;
+}
+a:hover > b {
+       color: #f9b500;
+}
+
+b {
+       transition: all 0.2s;
+       font-weight: 700;
+}
+
+ul {
+       list-style: none;
+}
+.clear-fix {
+       clear: both;
+}
+
+.pos-relative {
+       position: relative;
+}
+
+.pos-absolute {
+       position: absolute;
+}
+
+/* start of general title of website */
+.title {
+       position: relative;
+       padding-bottom: 20px;
+       margin-bottom: 40px;
+       font-size: 18px;
+       font-weight: 700;
+}
+.title::after {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       content: "";
+       width: 100%;
+       height: 1px;
+       background: #ccc;
+}
+
+.title::before {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       content: "";
+       width: 80px;
+       height: 5px;
+       background: #f9b500;
+       z-index: 1;
+}
+/* end of general title of website */
+
+/* start of artcle  titles */
+.article-title {
+       padding-top: 20px;
+}
+.article-title a {
+       font-size: 20px;
+       font-weight: 700;
+}
+/* end of article titles */
+
+/* start of info bar of  articles */
+.info-bar {
+       padding-top: 10px;
+       padding-bottom: 20px;
+       padding-left: 0;
+}
+.info-bar li {
+       display: inline-block;
+       margin-right: 20px;
+       line-height: 25px;
+       font-size: 15px;
+}
+/* end of info bar  of articles */
+/* start of general colors(pallete) */
+.text-muted {
+       color: #888;
+}
+.text-yellow {
+       color: #f9b500;
+}
+/* end of general colors */
+
+/* start of making responsive */
+.app {
+       width: 1200px;
+}
+@media (max-width: 1199.98px) {
+       .app {
+              width: 992px;
+       }
+}
+@media (max-width: 991.98px) {
+       .app {
+              width: 768px;
+       }
+}
+@media (max-width: 767.98px) {
+       .app {
+              width: 576px;
+       }
+}
+@media (max-width: 575.98px) {
+       .app {
+              width: calc(100% - 30px);
+              padding: 0 15px;
+       }
+}
+/* end of making responsive */
+
+/* start of styling custom css */
+
+/* start of styling header nav */
+
+.header-logo {
+       float: left;
+       margin: 30px 0;
+}
+
+.header-menu {
+       float: right;
+}
+.header-menu-item {
+       display: inline-block;
+}
+.header-menu-item-link {
+       padding: 0 15px;
+       line-height: 80px;
+       font-weight: 700;
+       color: #333 !important;
+}
+
+.header-menu-burger {
+       float: right;
+       background: transparent;
+       border: none;
+       line-height: 80px;
+       display: none;
+}
+
+/* .show will use  to appear header-menu-BURGER */
+.show {
+       display: inline-block !important;
+}
+
+/* making header-nav responsive */
+@media (max-width: 991.98px) {
+       .header-logo {
+              height: 15px;
+              margin: 32px 0;
+       }
+       .header-menu-item-link {
+              padding: 0 5px;
+       }
+}
+@media (max-width: 767.98px) {
+       .header-menu-burger {
+              display: inline-block;
+       }
+       .header-menu {
+              /* display: none; */
+              width: 100%;
+       }
+       .header-menu-item {
+              display: block;
+              border-bottom: 1px solid #cecece;
+              width: 100%;
+       }
+}
+/* end of making header-nav responsive */
+
+/* end of styling  header-nav */
+
+/* start styling  of header  grid system  */
+
+.grid-system {
+       width: 100%;
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       grid-template-rows: repeat(3, 220px);
+       gap: 10px;
+}
+.grid-system-item {
+       width: 100%;
+       height: 100%;
+       position: relative;
+}
+.grid-system-item::after {
+       content: "";
+       background: rgba(0, 0, 0, 0.4);
+       width: 100%;
+       height: 100%;
+       position: absolute;
+       left: 0;
+       bottom: 0;
+}
+
+/* styling .col-2-3 the biggest */
+
+.col-2-3 {
+       grid-column-start: span 2;
+       grid-column-end: 3;
+       grid-row-start: span 2;
+       grid-row-end: 3;
+       height: auto;
+}
+/* end of styling .col-2-3 the biggest */
+
+/* start of custom styling of grid  system */
+
+.grid-system-item-img {
+       width: 100%;
+       height: 100%;
+       position: relative;
+}
+
+.grid-system-item-desc {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       z-index: 1;
+       padding: 20px 20px 0 20px;
+}
+.grid-system-item-desc h1,
+.grid-system-item-desc ul li,
+.grid-system-item-desc ul li span {
+       color: #fff;
+}
+
+.grid-system-item-desc h1 {
+       font-size: 20px;
+       font-family: 700;
+       transition: all 0.2s;
+}
+.grid-system-item-desc h1:hover {
+       color: #f9b500 !important;
+}
+/* start  of making  grid system responsive */
+
+@media (max-width: 767.98px) {
+       .grid-system {
+              display: block;
+       }
+       .grid-system-item {
+              margin: 10px 0;
+              height: 300px;
+       }
+}
+/* end fo making grid system responsive */
+
+/* end of custom styling  of grid system */
+
+/* end  styling of grid-system */
+
+/* start of main section */
+
+/* start of styling .container (container main & sidebar) */
+
+.container {
+       width: 100%;
+       margin-top: 50px;
+       display: grid;
+       grid-template-columns: 2fr 1fr;
+       /* 2fr belongs to main and 1fr  to side bar */
+}
+
+/* start of styling main section(conatins all news & articles) */
+
+.main {
+       margin-right: 25px;
+}
+
+.main-news {
+       margin-bottom: 20px;
+}
+.main-news-img {
+       width: 100%;
+}
+
+/* start of  styling main crypto mining section */
+
+.main-crypto-mining-news-container {
+       display: flex;
+       justify-content: space-between;
+}
+.main-crypto-mining-news-container article:first-of-type {
+       margin-right: 25px;
+}
+
+/* end of  styling main crypto mining section */
+
+/* end of styling main section(conatins all news & articles) */
+
+/* start of styling sidebar */
+
+.side-bar {
+       width: calc(100% - 25px);
+       margin-left: 25px;
+}
+
+.side-bar-item {
+       width: 100%;
+       margin-bottom: 40px;
+}
+
+/* start of styling crypto list */
+
+.crypto-list {
+       padding: 0;
+}
+.crypto-list > li {
+       padding: 15px 0;
+       background: #f9b500;
+       border-bottom: 1px solid #fff;
+       text-align: center;
+}
+
+/* end of styling crypto list */
+
+/* start of styling popular  posts of side bar */
+
+.popular-post {
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
+       margin-bottom: 20px;
+}
+.popular-post img {
+       width: 100px;
+       height: 100px;
+}
+
+.popular-post-desc {
+       width: calc(100% - 120px);
+       margin-left: 20px;
+}
+
+.popular-post-desc h3 a b {
+       font-size: 18px;
+}
+
+
+/* end of styling popular  posts of side bar */
+
+/* start of styling newsletter part of side bar */
+
+.subscribe-form {
+       margin-top: 20px;
+       border: none;
+}
+.subscribe-form-text {
+       float: left;
+       padding: 13px 58px 13px 13px;
+       border: 1px solid #f9b500;
+       width: calc(100%);
+       outline: none;
+}
+
+.subscribe-form button {
+       float: right;
+       width: 45px;
+       height: 42px;
+       border: none;
+       text-align: center;
+       background: #f9b500;
+       margin-top: -43px;
+}
+.subscribe-form button i{
+       color: white !important;
+}
+.subscribe-form button:hover {
+       background-color: black;
+       cursor: pointer;
+}
+
+/* end of styling newsletter part of side bar */
+
+@media (max-width: 991.98px) {
+       .container {
+              display: block;
+       }
+       .main {
+              margin-right: 0;
+              width: 100%;
+       }
+       .side-bar {
+              margin: 0 auto;
+              width: 100%;
+       }
+}
+
+@media (max-width: 575.98px) {
+       .main-crypto-mining-news-container {
+              display: block;
+       }
+       .main-crypto-mining-news-container article:first-of-type {
+              margin: 0;
+       }
+}
+/* end of styling sidebar */
+
+/* end of styling .container (container main & sidebar) */
+
+/* end of main section */
+
+/* start of footer */
+.bg-map {
+       background-image: url("../images/map.png");
+       background-repeat: no-repeat;
+       background-position: center;
+}
+
+.footer {
+       background: #191919;
+}
+
+/* start  of designing .footer-row  */
+
+.footer-row {
+       width: 100%;
+       background-color: rgba(25, 25, 25, 0.9);
+}
+.footer-row:first-of-type {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+}
+/* start of designing 1/3 row cols */
+
+.footer-col {
+       width: calc(calc(100% / 3) - 30px);
+       margin-right: 30px;
+}
+
+.footer-logo {
+       height: 24px;
+       margin: 28px 0;
+}
+
+.footer-p {
+       color: #cccc;
+       line-height: 28px;
+       font-size: 16px;
+}
+.p-bottom {
+       padding: 20px 0;
+}
+.p-bottom a b {
+       color: #cccc;
+       font-size: 16px;
+}
+.p-bottom a b:hover {
+       color: #f9b500;
+}
+
+/* start of col 2/3 */
+
+.footer-section-title {
+       color: #f9b500;
+       padding: 30px 0;
+}
+.footer-section-link-item {
+       margin-bottom: 20px;
+}
+
+.footer-line {
+       background: rgba(170, 170, 170, 0.2);
+       height: 1px;
+       margin-bottom: 20px;
+}
+.footer-section-link-item a {
+       color: #ccc;
+       font-size: 14px;
+}
+.footer-section-link-item a:hover {
+       color: #f9b500;
+}
+
+.footer-section-link-item p {
+       color: #ccc;
+       font-size: 14px;
+       padding-top: 15px;
+}
+
+/* end of col 2/3 */
+
+/* end of designing 1/3 row cols */
+
+/* start of designing 3/3 row */
+.footer-row:last-of-type {
+       display: flex;
+       justify-content: space-between;
+}
+
+.footer-menu {
+       display: flex;
+       margin: 0 !important;
+       justify-content: flex-start;
+       padding: 0;
+}
+.footer-menu li {
+       padding: 0 20px 20px 0;
+}
+.footer-menu li a {
+       color: #ccc;
+       font-size: 12px;
+}
+.footer-menu li a:hover {
+       color: #f9b500;
+}
+
+.footer-social-network {
+       display: flex;
+       margin: 0 !important;
+       justify-content: flex-end;
+       padding: 0;
+}
+.footer-social-network li {
+       padding: 0 20px 20px 0;
+}
+.footer-social-network li a i {
+       color: #ccc;
+       font-size: 12px;
+}
+.footer-social-network li a i:hover {
+       color: #f9b500;
+}
+
+/* start of designing 3/3 row */
+
+/* end  of designing .footer-row  */
+
+/* start of making footer responsive */
+
+@media (max-width: 767.98px) {
+       .footer-col {
+              width: 100%;
+              margin-right: 0;
+       }
+
+       .footer-row:last-of-type {
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+       }
+
+       .bg-map {
+              padding: 0 !important;
+       }
+}
+
+/* end of making footer responsive */
+
+/* end of footer */
+
+/* Good luck author: mahdi koohneshin */

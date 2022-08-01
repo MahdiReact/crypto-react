@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Container from "./components/container/Container";
+import Footer from "./components/footer/Footer";
+import GridSystem from "./components/gridSystem/GridSystem";
+import Header from "./components/header/Header";
+import ClientLayout from "./components/layout/client/ClientLayout";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+       return (
+              <>
+                     <ClientLayout>
+                            {/* .app is container of all */}
+                            <section className="app">
+                                   {/* .content is container of everything except header nav & footer*/}
+                                   <section className="content">
+                                          <GridSystem />
+                                          <Container />
+                                   </section>
+                                   {/* end of .content*/}
+                            </section>
+                            {/* end of .app section*/}
+                     </ClientLayout>
+              </>
+       );
 }
 
 export default App;
